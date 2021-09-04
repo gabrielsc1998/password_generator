@@ -12,14 +12,14 @@ const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
   width: 90%;
   height: 100px;
-  display: flex;
-  align-items: center;
+  ${FlexBoxCentralize};
   justify-content: space-between;
 `;
 
 export const HeaderTitle = styled.p`
   font-weight: 400;
   font-size: 2rem;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export default HeaderContainer;
