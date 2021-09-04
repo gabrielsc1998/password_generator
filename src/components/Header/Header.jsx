@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import IconTheme from '../IconTheme';
 
-import HeaderContainer, { HeaderContent, HeaderTitle } from './style';
+import { HeaderContainer, HeaderContent, HeaderTitle } from './style';
 
 class Header extends Component {
   render() {

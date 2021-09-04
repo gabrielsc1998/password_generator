@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { FlexBoxCentralize } from '../../style/global';
 
-const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
   width: 100%;
   min-height: 100px;
   background-color: ${({ theme }) => theme.theme.colors.background};
@@ -21,5 +21,3 @@ export const HeaderTitle = styled.p`
   font-size: 2rem;
   color: ${({ theme }) => theme.theme.colors.text};
 `;
-
-export default HeaderContainer;

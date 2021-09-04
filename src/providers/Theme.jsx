@@ -4,7 +4,7 @@ import { ThemeProvider as ThemeProviderStyled } from 'styled-components';
 
 import theme from '../style/theme';
 
-const MODES = {
+export const MODES = {
   LIGHT: 'light',
   DARK: 'dark',
 };

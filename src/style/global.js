@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
   }};
   }
   button, a {
+    border: none;
     cursor: pointer;
+    box-shadow: none;
   }
 `;
 

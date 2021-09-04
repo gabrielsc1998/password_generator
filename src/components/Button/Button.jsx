@@ -2,35 +2,33 @@ import React, { Component } from 'react';
 
 import { ThemeContext } from '../../providers/Theme';
 
-import ButtonComponent from './style';
+import { Button, ButtonLabel, ButtonIcon } from './style';
 
-class Button extends Component {
-  componentDidMount() {
-    console.log('.', this.context);
-  }
-
-  changeTheme = () => {
-    this.context.changeMode();
+class ButtonComponent extends Component {
+  RenderButtonIcon = () => {
+    const { Icon } = this.props;
+    return (
+      Icon && (
+        <ButtonIcon>
+          <Icon />
+        </ButtonIcon>
+      )
+    );
   }
 
   render() {
-    const {
-      label = '',
-      Icon = undefined,
-    } = this.props;
+    const { label = '', onClick } = this.props;
     return (
-      <ButtonComponent
-        onClick={this.changeTheme}
-      >
-        {
-          Icon && <Icon color="white" />
-        }
-        { label }
-      </ButtonComponent>
+      <Button onClick={onClick}>
+        { this.RenderButtonIcon() }
+        <ButtonLabel>
+          { label }
+        </ButtonLabel>
+      </Button>
     );
   }
 }
 
-Button.contextType = ThemeContext;
+ButtonComponent.contextType = ThemeContext;
 
-export default Button;
+export default ButtonComponent;
