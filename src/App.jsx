@@ -7,12 +7,10 @@ import PasswordGenerator from './screens/PasswordGenerator/index';
 class App extends Component {
   render() {
     return (
-      <>
-        <ThemeProvider>
-          <GlobalStyle />
-          <PasswordGenerator />
-        </ThemeProvider>
-      </>
+      <ThemeProvider>
+        <GlobalStyle />
+        <PasswordGenerator />
+      </ThemeProvider>
     );
   }
 }

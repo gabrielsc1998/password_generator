@@ -11,7 +11,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     height: 100vh;
-    background-color: ${({ theme }) => theme.colors.mode.light.body};
+    background-color: ${(props) => {
+    const { theme, mode } = props.theme;
+    return theme.colors.mode[mode].body;
+  }};
   }
   button, a {
     cursor: pointer;

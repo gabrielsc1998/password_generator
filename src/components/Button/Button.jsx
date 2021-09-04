@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-// import PropTypes from "prop-types";
+
+import { ThemeContext } from '../../providers/Theme';
 
 import ButtonComponent from './style';
 
 class Button extends Component {
   componentDidMount() {
+    console.log('.', this.context);
+  }
 
+  changeTheme = () => {
+    this.context.changeMode();
   }
 
   render() {
@@ -14,7 +19,9 @@ class Button extends Component {
       Icon = undefined,
     } = this.props;
     return (
-      <ButtonComponent>
+      <ButtonComponent
+        onClick={this.changeTheme}
+      >
         {
           Icon && <Icon color="white" />
         }
@@ -23,5 +30,7 @@ class Button extends Component {
     );
   }
 }
+
+Button.contextType = ThemeContext;
 
 export default Button;

@@ -5,7 +5,7 @@ import { FlexBoxCentralize } from '../../style/global';
 const HeaderContainer = styled.header`
   width: 100%;
   min-height: 100px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.theme.colors.background};
   ${FlexBoxCentralize};
 `;
 
@@ -19,7 +19,7 @@ export const HeaderContent = styled.div`
 export const HeaderTitle = styled.p`
   font-weight: 400;
   font-size: 2rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.theme.colors.text};
 `;
 
 export default HeaderContainer;
