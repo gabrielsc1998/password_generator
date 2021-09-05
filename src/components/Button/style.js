@@ -14,6 +14,7 @@ export const Button = styled.button`
 `;
 
 export const ButtonLabel = styled.p`
+  font-weight: 500;
   font-size: 1rem;
   color: ${(props) => {
     const { theme, mode } = props.theme;

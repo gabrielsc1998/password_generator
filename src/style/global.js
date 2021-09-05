@@ -30,3 +30,12 @@ export const FlexBoxCentralize = css`
 `;
 
 export default GlobalStyle;
+
+export const BreakPoints = {
+  mobile_S: '320px',
+  mobile_M: '375px',
+  mobile_L: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptop_L: '1440px',
+};

@@ -10,6 +10,8 @@ import {
   PasswordGeneratorBody,
   PasswordGeneratorShow,
   PasswordGeneratorCopiedTextSuccess,
+  PasswordGeneratorShowText,
+  PasswordGeneratorButtonContainer,
 } from './style';
 
 import Generator from './generator';
@@ -42,17 +44,21 @@ class PasswordGenerator extends Component {
         <PasswordGeneratorContainerBody>
           <PasswordGeneratorBody>
             <PasswordGeneratorCopiedTextSuccess show={this.state.copied}>
-              SENHA COPIADA!
+              Password Copied!
             </PasswordGeneratorCopiedTextSuccess>
             <PasswordGeneratorShow>
-              <p>{this.state.password}</p>
+              <PasswordGeneratorShowText>
+                {this.state.password}
+              </PasswordGeneratorShowText>
             </PasswordGeneratorShow>
             <InputSize onChange={this.onChangeInputSize} />
-            <Button
-              label="Copy"
-              Icon={IconCopy}
-              onClick={this.copyPassword}
-            />
+            <PasswordGeneratorButtonContainer>
+              <Button
+                label="Copy to clipboard"
+                Icon={IconCopy}
+                onClick={this.copyPassword}
+              />
+            </PasswordGeneratorButtonContainer>
           </PasswordGeneratorBody>
         </PasswordGeneratorContainerBody>
       </PasswordGeneratorContainer>
