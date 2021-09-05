@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { AiOutlineCopy as IconCopy } from 'react-icons/ai';
+import { AiOutlineCopy as IconCopy, AiOutlineCheck as IconOk } from 'react-icons/ai';
 
 import { Button, Header, InputSize } from '../../components';
 
@@ -19,6 +19,7 @@ import Generator from './generator';
 class PasswordGenerator extends Component {
   constructor() {
     super();
+    this._ctrlTimeout = null;
     this.state = { password: Generator.password(1), copied: false };
   }
 
@@ -31,7 +32,8 @@ class PasswordGenerator extends Component {
   copyPassword = () => {
     if (navigator.clipboard.writeText(this.state.password)) {
       this.setState({ copied: true });
-      setTimeout(() => {
+      clearTimeout(this._ctrlTimeout);
+      this._ctrlTimeout = setTimeout(() => {
         this.setState({ copied: false });
       }, 2500);
     }
@@ -44,6 +46,7 @@ class PasswordGenerator extends Component {
         <PasswordGeneratorContainerBody>
           <PasswordGeneratorBody>
             <PasswordGeneratorCopiedTextSuccess show={this.state.copied}>
+              <IconOk style={{ marginRight: '0.25rem' }} />
               Password Copied!
             </PasswordGeneratorCopiedTextSuccess>
             <PasswordGeneratorShow>

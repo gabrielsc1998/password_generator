@@ -16,9 +16,13 @@ export const PasswordGeneratorContainerBody = styled.div`
 `;
 
 export const PasswordGeneratorBody = styled.div`
-  width: 90%;
+  width: 50%;
   ${FlexBoxCentralize};
   flex-direction: column;
+
+  @media (max-width: ${BreakPoints.mobile_L}) {
+    width: 90%;
+  };
 `;
 
 export const PasswordGeneratorShow = styled.div`
@@ -67,6 +71,7 @@ export const PasswordGeneratorCopiedTextSuccess = styled.p`
   background-color: ${({ theme }) => theme.theme.colors.success.background};
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
+  ${FlexBoxCentralize};
 `;
 
 export const PasswordGeneratorButtonContainer = styled.div`

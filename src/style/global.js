@@ -1,5 +1,20 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+export const BreakPoints = {
+  mobile_S: '320px',
+  mobile_M: '375px',
+  mobile_L: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptop_L: '1440px',
+};
+
+export const FlexBoxCentralize = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -23,19 +38,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const FlexBoxCentralize = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export default GlobalStyle;
-
-export const BreakPoints = {
-  mobile_S: '320px',
-  mobile_M: '375px',
-  mobile_L: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptop_L: '1440px',
-};
